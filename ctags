@@ -1,0 +1,4 @@
+-R
+--exclude=.git
+--tag-relative=yes
+--PHP-kinds=+f
