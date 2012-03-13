@@ -14,17 +14,8 @@ filetype plugin indent on       " load file type plugins + indentation
 " THE LOOKS "
 """""""""""""
 set background=dark
-" I hate line numbers!
+" I hate line numbers! I can see them in the status bar just fine.
 set nonumber
-" Color schemes. Keep it simple.
-if has('gui_running')
-  color desert
-  " Remove toolbar.
-  set guioptions-=T
-else
-  " Desert looks horrible in my terminal.
-  color default
-endif
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
@@ -77,24 +68,6 @@ nmap <leader>T :CommandT %:h<cr>
 " Command-t list buffers - this is even better than Buffergator.
 nmap <leader>b :CommandTBuffer<cr>
 
-
-""""""""""
-" Drupal "
-""""""""""
-if has("autocmd")
-" Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-  augroup END
-endif
-
-
-" CTAGS - use an explicit path or the Mac one will be used.
-map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+f --languages=php --recurse<CR>
-
 """"""""
 " MISC "
 """"""""
@@ -114,26 +87,18 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
-if has("gui_macvim") && has("gui_running")
-" Map Command-# to switch tabs just like Firefox or Textmate has it.
-  map <D-0> 0gt
-  imap <D-0> <Esc>0gt
-  map <D-1> 1gt
-  imap <D-1> <Esc>1gt
-  map <D-2> 2gt
-  imap <D-2> <Esc>2gt
-  map <D-3> 3gt
-  imap <D-3> <Esc>3gt
-  map <D-4> 4gt
-  imap <D-4> <Esc>4gt
-  map <D-5> 5gt
-  imap <D-5> <Esc>5gt
-  map <D-6> 6gt
-  imap <D-6> <Esc>6gt
-  map <D-7> 7gt
-  imap <D-7> <Esc>7gt
-  map <D-8> 8gt
-  imap <D-8> <Esc>8gt
-  map <D-9> 9gt
-  imap <D-9> <Esc>9gt
+""""""""""
+" Drupal "
+""""""""""
+if has("autocmd")
+" Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+  augroup END
 endif
+
+" CTAGS - use an explicit path or the Mac one will be used.
+map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+f --languages=php --recurse<CR>
