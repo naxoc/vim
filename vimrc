@@ -64,6 +64,13 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 " Set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
+" Bubble single lines. Killer feature called 'Line up/down' in Textmate.
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
 " Custom mappings for plugins:
 " Command-t in current dir
 nmap <leader>T :CommandT %:h<cr>
