@@ -31,11 +31,11 @@ namespace :vim do
 end
 
 namespace :bundles do
-  task :install [:clone, :custom_compile] do
+  task :install => [:clone, :custom_compile] do
     puts "Installed and compiled bundles"
   end
-  task :update [:fetch, :custom_compile] do
-    puts "updated and comiled bundles"
+  task :update => [:fetch, :custom_compile] do
+    puts "Updated and compiled bundles"
   end
   task :clone do
     bundles.each do |bundle, folder|
@@ -57,8 +57,6 @@ namespace :bundles do
   task :custom_compile do
     # command-t needs to be compiled with some c stuff upon install and
     # update.
-    system "cd ~/.vim/bundle/command-t"
-    system "bundle install"
-    system "rake make"
+    system "cd #{current_dir}/bundle/command-t; bundle install; rake make"
   end
 end

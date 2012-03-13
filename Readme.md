@@ -12,7 +12,7 @@ Go to your home dir.
 
 Clone the repository into the ~/.vim folder
 
-    $ git clone https://github.com/ramlev/vim.git .vim
+    $ git clone https://naxoc@github.com/naxoc/vim.git
 
 Go into that folder
 
