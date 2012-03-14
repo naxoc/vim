@@ -26,7 +26,7 @@ namespace :vim do
     system "ln -Fins #{current_dir}/vimrc #{home_dir}/.vimrc"
     system "ln -Fins #{current_dir}/gvimrc #{home_dir}/.gvimrc"
     system "ln -Fins #{current_dir}/ctags #{home_dir}/.ctags"
-    system "mkdir -p #{current_dir}/_backup #{current_dir}/_temp"
+    system "mkdir -p #{current_dir}/_backup #{current_dir}/_temp #{current_dir}/sessions"
   end
 end
 

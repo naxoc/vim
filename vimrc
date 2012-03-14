@@ -24,12 +24,15 @@ set laststatus=2
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
+" Highlight trailing whitespace.
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+set wrapscan                    " Let search wrap around.
 
 """"""""""""
 " MAPPINGS "
@@ -61,6 +64,10 @@ nmap <C-Down> ddp
 " Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
+
+" Upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
 
 " Custom mappings for plugins:
 " Command-t in current dir
@@ -102,3 +109,35 @@ endif
 
 " CTAGS - use an explicit path or the Mac one will be used.
 map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+f --languages=php --recurse<CR>
+
+"""""""""""""
+" FUNCTIONS "
+"""""""""""""
+" Creates a session in the sessions dir in .vim. The dir you are in is used
+" for creating the path to the session file.
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = b:sessiondir . '/session.vim'
+  exe "mksession! " . b:filename
+endfunction
+
+" Map ctrl s to the session save.
+noremap <C-S> :call MakeSession()<cr>
+
+" Loads a sesssion from your .vim/sessions dir if there is one. The dir you
+" are currently in is used for the path/filename for the sessoin file.
+function! LoadSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessionfile = b:sessiondir . "/session.vim"
+  if (filereadable(b:sessionfile))
+    exe 'source ' b:sessionfile
+  else
+    echo "No session loaded."
+  endif
+endfunction
+" Map ctrl l to load session.
+map <C-L> :call LoadSession()<cr>

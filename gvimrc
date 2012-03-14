@@ -3,13 +3,21 @@ if has("gui_macvim") && has("gui_running")
   " This is a standard Vim colorscheme and I really like it in Macvim. In my
   " terminal it looks absoultely horrible though.
   color desert
-  " Remove toolbar. What is the point of looking flashy with Vim if I have to
-  " click icons?
-  set guioptions-=T
-
   " I like Monaco. And I like it rather large. Must be old age and the fact
   " that it looks a bit like Comic Sans. Keeping my editor classy.
   set guifont=Monaco:h13
+
+  " Remove toolbar. What is the point of looking flashy with Vim if I have to
+  " click icons?
+  set guioptions-=T
+  " Remove left toolbar.
+  set guioptions-=l
+  " Remove left toolbar when there is a vertical split.
+  set guioptions-=L
+  " Remove right toolbar.
+  set guioptions-=r
+  " Remove right toolbar when there is a vertical split.
+  set guioptions-=R
 
 " Map Command-# to switch tabs just like Firefox or Textmate has it.
   map <D-0> 0gt
