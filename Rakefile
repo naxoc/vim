@@ -10,7 +10,8 @@ bundles = {
   'git://github.com/scrooloose/nerdcommenter.git' => 'nerdcommenter',
   'https://github.com/Lokaltog/vim-powerline.git' => 'powerline',
   'git://git.wincent.com/command-t.git' => 'command-t',
-  'https://github.com/groenewege/vim-less.git' => 'vim-less'
+  'https://github.com/groenewege/vim-less.git' => 'vim-less',
+  'https://github.com/vim-scripts/golden-ratio.git' => 'golden-ratio'
 }
 
 task :default do

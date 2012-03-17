@@ -72,8 +72,6 @@ nmap <leader>l mQviwu`Q
 " Custom mappings for plugins:
 " Command-t in current dir
 nmap <leader>T :CommandT %:h<cr>
-" Command-t list buffers - this is even better than Buffergator.
-nmap <leader>b :CommandTBuffer<cr>
 
 """"""""
 " MISC "
@@ -106,6 +104,15 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.test set filetype=php
   augroup END
 endif
+
+"""""""
+" PHP "
+"""""""
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_folding=1
+set makeprg=php\ -l\ %
+set errorformat=%m\ line\ %l
 
 " CTAGS - use an explicit path or the Mac one will be used.
 map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+f --languages=php --recurse<CR>
@@ -140,4 +147,4 @@ function! LoadSession()
   endif
 endfunction
 " Map ctrl l to load session.
-map <C-L> :call LoadSession()<cr>
+map <c-d> :call LoadSession()<cr>
