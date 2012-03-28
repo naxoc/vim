@@ -92,6 +92,9 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
+inoremap <c-f> <c-x><c-o>
+nnoremap <F5> :GundoToggle<CR>
+
 """"""""""
 " Drupal "
 """"""""""
@@ -110,7 +113,7 @@ endif
 """""""
 let php_sql_query=1
 let php_htmlInStrings=1
-let php_folding=1
+let php_folding=0
 set makeprg=php\ -l\ %
 set errorformat=%m\ line\ %l
 
