@@ -39,6 +39,8 @@ set wrapscan                    " Let search wrap around.
 """"""""""""
 " Change mapleader to ,
 let mapleader = ","
+" Since jj is a rare combo - map that to esc in insertmode.
+imap jj <Esc>
 
 " Kill current buffer
 map <leader>d :bd<cr>
@@ -77,6 +79,7 @@ nmap <leader>T :CommandT %:h<cr>
 " MISC "
 """"""""
 syntax enable
+set hidden
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set wildmode=list:longest
