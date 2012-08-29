@@ -8,11 +8,10 @@ desc 'Install plugins and vim config files'
 bundles = {
   'https://github.com/tpope/vim-pathogen.git' => 'pathogen',
   'git://github.com/scrooloose/nerdcommenter.git' => 'nerdcommenter',
-  'https://github.com/Lokaltog/vim-powerline.git' => 'powerline',
-  'git://git.wincent.com/command-t.git' => 'command-t',
-  'git://github.com/msanders/snipmate.vim.git' => 'snipmate',
+  'https://github.com/scrooloose/nerdtree.git' => 'nerdtree',
   'git://github.com/cakebaker/scss-syntax.vim.git' => 'scss-syntax.vim.git',
-  'http://github.com/sjl/gundo.vim.git' => 'gundo'
+  'http://github.com/sjl/gundo.vim.git' => 'gundo',
+  'https://github.com/Lokaltog/vim-easymotion.git' => 'easymotion'
 }
 
 task :default do
@@ -33,11 +32,11 @@ namespace :vim do
 end
 
 namespace :bundles do
-  task :install => [:clone, :custom_compile] do
-    puts "Installed and compiled bundles"
+  task :install => [:clone] do
+    puts "Installed bundles"
   end
-  task :update => [:fetch, :custom_compile] do
-    puts "Updated and compiled bundles"
+  task :update => [:fetch] do
+    puts "Updated bundles"
   end
   task :clone do
     bundles.each do |bundle, folder|
@@ -55,10 +54,5 @@ namespace :bundles do
         puts
       }
     end
-  end
-  task :custom_compile do
-    # command-t needs to be compiled with some c stuff upon install and
-    # update.
-    system "cd #{current_dir}/bundle/command-t; bundle install; rake make"
   end
 end
