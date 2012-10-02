@@ -34,6 +34,8 @@ set hidden
 set clipboard=unnamed
 " Tell VIM to always put a status line in, even if there is only one window.
 set laststatus=2
+" Fold function.
+map <leader>zf $zf%
 
 " I hit wq all the time when I just want to save. Disable that.
 cmap wq w
@@ -80,6 +82,11 @@ let g:ctrlp_root_markers = ['index.php']
 " Show in tree.
 map <leader>N :NERDTreeFind<cr>
 map <leader>n :NERDTreeToggle<cr>
+" Toogle tagbar
+map <leader>/ :TagbarToggle<cr>
+map <leader>n :NERDTreeToggle<cr>
+
+
 
 " Close buffer but not window.
 map <leader>d :Kwbd<cr>
@@ -97,7 +104,7 @@ map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.eng
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
-let g:syntastic_phpcs_conf='--standard=Drupal --extensions=php,module,inc,install,test,profile,theme'
+let g:syntastic_phpcs_conf='--standard=Drupal --extensions=php,module,inc,install,test,profile,theme,inc'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['php'],
                            \ 'passive_filetypes': [] }

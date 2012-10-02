@@ -19,7 +19,9 @@ bundles = {
   'https://github.com/scrooloose/syntastic.git' => 'syntastic',
   'https://github.com/majutsushi/tagbar.git' => 'tagbar',
   'https://github.com/tomtom/tlib_vim' => 'tlib',
-  'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils'
+  'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
+  'git://github.com/tanarurkerem/drupal-snippets.git' => 'drupal-snippets',
+  'http://git.drupal.org/project/vimrc.git' => 'drupal-vimrc'
 }
 
 task :default do
