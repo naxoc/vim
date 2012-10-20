@@ -99,15 +99,8 @@ map <leader>m :bp<cr>
 map <leader>s :%s/\s\+$//e<cr>
 
 " CTAGS - use an explicit path or the Mac one will be used.
-map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+f --languages=php --recurse<CR>
+map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+icdf --languages=php --recurse<CR>
 
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=0
-let g:syntastic_phpcs_conf='--standard=Drupal --extensions=php,module,inc,install,test,profile,theme,inc'
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['php'],
-                           \ 'passive_filetypes': [] }
 " Check php files for errors
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
@@ -119,6 +112,9 @@ nmap <C-Down> ddp
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
+" When deleting with x - go to "/dev/null"
+noremap x "_x
+
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -126,6 +122,13 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set wrapscan                    " Let search wrap around.
 
+autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 "Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': ['drupal', 'php'],
+      \ 'passive_filetypes': ['puppet'] }
+
+let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem

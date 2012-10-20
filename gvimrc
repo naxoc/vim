@@ -1,5 +1,5 @@
 if has("gui_running")
-  set guifont=Monaco:h14
+  set guifont=Monaco:h15
 
   " Remove toolbar, left scrollbar and right scrollbar
   set guioptions=aAce
