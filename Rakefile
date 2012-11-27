@@ -21,7 +21,7 @@ bundles = {
   'https://github.com/tomtom/tlib_vim' => 'tlib',
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
   'git://github.com/tanarurkerem/drupal-snippets.git' => 'drupal-snippets',
-  'http://git.drupal.org/project/vimrc.git' => 'drupal-vimrc'
+  'git://github.com/tpope/vim-fugitive.git' => 'vim-fugitive'
 }
 
 task :default do

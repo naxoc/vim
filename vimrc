@@ -1,6 +1,7 @@
 set nocompatible
 
 call pathogen#infect()
+call pathogen#infect('custom_bundles')
 syntax on
 filetype plugin indent on
 
@@ -36,6 +37,10 @@ set clipboard=unnamed
 set laststatus=2
 " Fold function.
 map <leader>zf $zf%
+
+" Life is too short to prefix everything all the time.
+nnoremap / /\v
+vnoremap / /\v
 
 " I hit wq all the time when I just want to save. Disable that.
 cmap wq w
