@@ -6,10 +6,10 @@ syntax on
 filetype plugin indent on
 
 " Disable cursor keys in normal mode. A royal PITA, but that will learn me.
-map <Left> :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up> :echo "no!"<cr>
-map <Down> :echo "no!"<cr>
+"map <Left> :echo "no!"<cr>
+"map <Right> :echo "no!"<cr>
+"map <Up> :echo "no!"<cr>
+"map <Down> :echo "no!"<cr>
 
 set hidden
 set encoding=utf-8
