@@ -9,6 +9,6 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=R
 endif
-color desert
+color slight_desert
 set undodir=~/.vimundodir
 set undofile
