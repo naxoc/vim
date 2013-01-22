@@ -25,6 +25,14 @@ let mapleader = ","
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
+setl formatoptions+=croql
+setl formatoptions-=t
+"  -t:  Do not apply 'textwidth' to code.
+"  +c:  Apply 'textwidth' to comments.
+"  +r:  Continue comments after hitting <Enter> in Insert mode.
+"  +o:  Continue comments after when using 'O' or 'o' to open a new line.
+"  +q:  Format comments using q<motion>.
+"  +l:  Do not break a comment line if it is long before you start.
 
 " I really really think line numbers are ugly. They are in my status line
 " anyway!
@@ -57,6 +65,8 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 nmap <C-h> <C-W>h
+
+set scrolloff=5
 
 " Stolen from:
 " http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
@@ -116,9 +126,6 @@ nmap <C-Down> ddp
 " Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
-
-" When deleting with x - go to "/dev/null"
-noremap x "_x
 
 " Searching
 set hlsearch                    " highlight matches
