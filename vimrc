@@ -11,6 +11,7 @@ filetype plugin indent on
 "map <Up> :echo "no!"<cr>
 "map <Down> :echo "no!"<cr>
 
+set number
 set hidden
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -22,23 +23,10 @@ set directory=~/.vim/_temp " where to put swap files.
 let mapleader = ","
 
 " Whitespace
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
+set tabstop=2 shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
-setl formatoptions+=croql
-setl formatoptions-=t
-"  -t:  Do not apply 'textwidth' to code.
-"  +c:  Apply 'textwidth' to comments.
-"  +r:  Continue comments after hitting <Enter> in Insert mode.
-"  +o:  Continue comments after when using 'O' or 'o' to open a new line.
-"  +q:  Format comments using q<motion>.
-"  +l:  Do not break a comment line if it is long before you start.
 
-" I really really think line numbers are ugly. They are in my status line
-" anyway!
-set nonumber
-set wrap
-set hidden
 " Hmm
 set clipboard=unnamed
 " Tell VIM to always put a status line in, even if there is only one window.
