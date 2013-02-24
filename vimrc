@@ -90,7 +90,8 @@ map <leader>n :NERDTreeToggle<cr>
 map <leader>/ :TagbarToggle<cr>
 map <leader>n :NERDTreeToggle<cr>
 
-
+" Gundo.
+nnoremap <leader>g :GundoToggle<CR>
 
 " Close buffer but not window.
 map <leader>d :Kwbd<cr>
