@@ -6,12 +6,11 @@ syntax on
 filetype plugin indent on
 
 " Disable cursor keys in normal mode. A royal PITA, but that will learn me.
-"map <Left> :echo "no!"<cr>
-"map <Right> :echo "no!"<cr>
-"map <Up> :echo "no!"<cr>
-"map <Down> :echo "no!"<cr>
+map <Left> :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
 
-set number
 set hidden
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -27,10 +26,10 @@ set expandtab                   " use spaces, not tabs (optional)
 set tabstop=2 shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
-" Hmm
-set clipboard=unnamed
-" Tell VIM to always put a status line in, even if there is only one window.
-set laststatus=2
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+    set t_Co=256
+endif
+
 " Fold function.
 map <leader>zf $zf%
 
@@ -56,6 +55,7 @@ nmap <C-h> <C-W>h
 
 set scrolloff=5
 
+set laststatus=2
 " Stolen from:
 " http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 set statusline=%t\       "tail of the filename
@@ -64,6 +64,7 @@ set statusline+=%y\      "filetype
 set statusline+=b%-3.3n\  "buffer number
 set statusline+=%r      "read only flag
 set statusline+=%=      "left/right separator
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
@@ -127,8 +128,11 @@ autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldma
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
-let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'active_filetypes': ['drupal', 'php'],
-      \ 'passive_filetypes': ['puppet'] }
 
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
+
+" Using the default color theme in the terminal, I find the yellow line
+" numbers obnoxious. Make them grey.
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
