@@ -6,7 +6,6 @@ current_dir = File.dirname(__FILE__)
 desc 'Install plugins and vim config files'
 
 bundles = {
-  'https://github.com/mileszs/ack.vim.git' => 'ack',
   'https://github.com/kien/ctrlp.vim.git' => 'ctrlp',
   'https://github.com/Lokaltog/vim-easymotion.git' => 'easymotion',
   'http://github.com/sjl/gundo.vim.git' => 'gundo',
