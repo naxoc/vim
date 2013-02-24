@@ -15,6 +15,7 @@ bundles = {
   'https://github.com/scrooloose/nerdtree.git' => 'nerdtree',
   'https://github.com/garbas/vim-snipmate.git' => 'snipmate',
   'https://github.com/naxoc/snipmate-snippets.git' => 'naxoc-snippets',
+  'git://github.com/myusuf3/numbers.vim.git' => 'numbers',
   'https://github.com/ervandew/supertab.git' => 'supertab',
   'https://github.com/scrooloose/syntastic.git' => 'syntastic',
   'https://github.com/majutsushi/tagbar.git' => 'tagbar',
