@@ -65,7 +65,7 @@ set statusline+=b%-3.3n\  "buffer number
 set statusline+=%r      "read only flag
 set statusline+=%=      "left/right separator
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
-set statusline+=%c,     "cursor column
+set statusline+=\ \ %c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 

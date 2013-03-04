@@ -14,14 +14,14 @@ bundles = {
   'https://github.com/scrooloose/nerdtree.git' => 'nerdtree',
   'https://github.com/garbas/vim-snipmate.git' => 'snipmate',
   'https://github.com/naxoc/snipmate-snippets.git' => 'naxoc-snippets',
-  'git://github.com/myusuf3/numbers.vim.git' => 'numbers',
   'https://github.com/ervandew/supertab.git' => 'supertab',
   'https://github.com/scrooloose/syntastic.git' => 'syntastic',
   'https://github.com/majutsushi/tagbar.git' => 'tagbar',
   'https://github.com/tomtom/tlib_vim' => 'tlib',
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
   'git://github.com/tanarurkerem/drupal-snippets.git' => 'drupal-snippets',
-  'git://github.com/tpope/vim-fugitive.git' => 'vim-fugitive'
+  'git://github.com/tpope/vim-fugitive.git' => 'vim-fugitive',
+  'git://github.com/altercation/vim-colors-solarized.git' => 'solarized'
 }
 
 task :default do
