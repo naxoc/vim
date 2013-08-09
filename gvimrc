@@ -1,5 +1,5 @@
 if has("gui_running")
-  set guifont=Monaco:h14
+  set guifont=Menlo:h14
 
   " Remove toolbar, left scrollbar and right scrollbar
   set guioptions=aAce
@@ -9,7 +9,8 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=R
 endif
-color desert
-highlight LineNr guifg=DarkGrey guibg=NONE
+color solarized
+set background=light
+
 set undodir=~/.vimundodir
 set undofile

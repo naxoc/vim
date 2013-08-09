@@ -2,6 +2,11 @@ set nocompatible
 
 call pathogen#infect()
 call pathogen#infect('custom_bundles')
+
+if $TERM == "xterm-256color" || $TERM == "xterm-color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
+endif
+
 syntax on
 filetype plugin indent on
 
@@ -26,9 +31,6 @@ set expandtab                   " use spaces, not tabs (optional)
 set tabstop=2 shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
-    set t_Co=256
-endif
 
 " Fold function.
 map <leader>zf $zf%
@@ -39,11 +41,6 @@ vnoremap / /\v
 
 " I hit wq all the time when I just want to save. Disable that.
 cmap wq w
-" Hitting uppercase w is also a classic.
-cmap W w
-" I also hit f1 when scrambling for esc, so just remap that while we are at
-" it.
-map! <f1> <esc>
 " I never type jj, so make that esc now that we are stealing keys anyway.
 imap jj <Esc>
 
@@ -69,6 +66,8 @@ set statusline+=\ \ %c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
+:set pastetoggle=<F3>
+
 " Map the buffer switcher from the Ctrlp plugin.
 map <leader>b :CtrlPBuffer<cr>
 " Map the recent files.
@@ -85,7 +84,6 @@ let g:ctrlp_root_markers = ['index.php']
 
 " Show in tree.
 map <leader>N :NERDTreeFind<cr>
-map <leader>n :NERDTreeToggle<cr>
 " Toogle tagbar
 map <leader>/ :TagbarToggle<cr>
 map <leader>n :NERDTreeToggle<cr>
@@ -103,8 +101,10 @@ map <leader>m :bp<cr>
 " Remove trailing whitespace.
 map <leader>s :%s/\s\+$//e<cr>
 
+let NERDTreeShowHidden=1
+
 " CTAGS - use an explicit path or the Mac one will be used.
-map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+icdf --languages=php --recurse<CR>
+" map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+icdf --languages=php --recurse<CR>
 
 " Check php files for errors
 set makeprg=php\ -l\ %
@@ -128,7 +128,8 @@ autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldma
 "Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
-
+" Get json syntax highlighting for free like this.
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
