@@ -5,6 +5,7 @@ call pathogen#infect('custom_bundles')
 
 if $TERM == "xterm-256color" || $TERM == "xterm-color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
+  color Tomorrow-Night-Eighties
 endif
 
 syntax on
@@ -17,6 +18,7 @@ map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
 set hidden
+set number
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set wildmode=list:longest
