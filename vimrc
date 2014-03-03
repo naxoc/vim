@@ -33,6 +33,8 @@ set expandtab                   " use spaces, not tabs (optional)
 set tabstop=2 shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
+" Autosave files when focus is lost.
+:au FocusLost * :wa
 
 " Fold function.
 map <leader>zf $zf%
