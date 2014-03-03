@@ -1,5 +1,5 @@
 if has("gui_running")
-  set guifont=Menlo:h14
+  set guifont=Menlo:h15
 
   " Remove toolbar, left scrollbar and right scrollbar
   set guioptions=aAce
@@ -14,3 +14,4 @@ hi LineNr guifg=grey50 guibg=grey20
 
 set undodir=~/.vimundodir
 set undofile
+let g:molokai_original = 1
