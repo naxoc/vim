@@ -7,6 +7,7 @@ desc 'Install plugins and vim config files'
 
 bundles = {
   'https://github.com/kien/ctrlp.vim.git' => 'ctrlp',
+  'https://github.com/kchmck/vim-coffee-script.git' => 'vim-coffee-script',
   'https://github.com/Lokaltog/vim-easymotion.git' => 'easymotion',
   'http://github.com/sjl/gundo.vim.git' => 'gundo',
   'https://github.com/rgarver/Kwbd.vim.git' => 'kwbd',
@@ -16,7 +17,6 @@ bundles = {
   'https://github.com/naxoc/snipmate-snippets.git' => 'naxoc-snippets',
   'https://github.com/ervandew/supertab.git' => 'supertab',
   'https://github.com/scrooloose/syntastic.git' => 'syntastic',
-  'git@github.com:mhinz/vim-startify.git' => 'startify',
   'https://github.com/majutsushi/tagbar.git' => 'tagbar',
   'https://github.com/tomtom/tlib_vim' => 'tlib',
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',

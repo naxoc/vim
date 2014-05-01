@@ -3,19 +3,14 @@ set nocompatible
 call pathogen#infect()
 call pathogen#infect('custom_bundles')
 
-if $TERM == "xterm-256color" || $TERM == "xterm-color" || $COLORTERM == "gnome-terminal"
-  set t_Co=256
-  color Tomorrow-Night-Eighties
-endif
-
 syntax on
 filetype plugin indent on
 
 " Disable cursor keys in normal mode. A royal PITA, but that will learn me.
-map <Left> :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up> :echo "no!"<cr>
-map <Down> :echo "no!"<cr>
+"map <Left> :echo "no!"<cr>
+"map <Right> :echo "no!"<cr>
+"map <Up> :echo "no!"<cr>
+"map <Down> :echo "no!"<cr>
 
 set hidden
 set number
@@ -34,7 +29,7 @@ set tabstop=2 shiftwidth=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 " Autosave files when focus is lost.
-:au FocusLost * :wa
+":au FocusLost * :wa
 
 " Fold function.
 map <leader>zf $zf%
@@ -142,3 +137,6 @@ let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 " Using the default color theme in the terminal, I find the yellow line
 " numbers obnoxious. Make them grey.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+" Because cow.
+"let g:startify_custom_header =
+  "\ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
