@@ -9,7 +9,7 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=R
 endif
-color default
+color github
 "hi LineNr guifg=grey50 guibg=grey20
 
 set undodir=~/.vimundodir
