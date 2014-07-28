@@ -1,5 +1,5 @@
 # About
-This is my vim configuration. I am a recent Textmate to MacVim convert, so a lot of my customizations are to replace features I liked from Textmate. I like Vim to be blazing fast, so I have a lot of focus on keeping my configuration small and without too many heavy plugins.
+This is my vim configuration. I like Vim to be blazing fast, so I have a lot of focus on keeping my configuration small and without too many heavy plugins.
 
 This readme file and the Rakefile is very much inspired by Hasse Ramlevs vim project: https://github.com/ramlev/vim - Thanks Hasse!
 
