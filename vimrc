@@ -13,7 +13,7 @@ filetype plugin indent on
 "map <Down> :echo "no!"<cr>
 
 set hidden
-set number
+"set number
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set wildmode=list:longest
