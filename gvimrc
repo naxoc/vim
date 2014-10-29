@@ -9,7 +9,7 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=R
 endif
-color base16-atelierforest
+color macvim
 "hi LineNr guifg=grey50 guibg=grey20
 
 set undodir=~/.vimundodir
