@@ -123,7 +123,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set wrapscan                    " Let search wrap around.
 
-autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+"autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 "Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
@@ -137,6 +137,3 @@ let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 " Using the default color theme in the terminal, I find the yellow line
 " numbers obnoxious. Make them grey.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
-" Because cow.
-"let g:startify_custom_header =
-  "\ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
