@@ -22,7 +22,8 @@ bundles = {
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
   'git://github.com/tanarurkerem/drupal-snippets.git' => 'drupal-snippets',
   'git://github.com/tpope/vim-fugitive.git' => 'vim-fugitive',
-  'https://github.com/rking/ag.vim.git' => 'ag'
+  'https://github.com/rking/ag.vim.git' => 'ag',
+  'git@github.com:dag/vim-fish.git' => 'vim-fish'
 }
 
 task :default do
