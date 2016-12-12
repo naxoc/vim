@@ -141,3 +141,4 @@ let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 " Using the default color theme in the terminal, I find the yellow line
 " numbers obnoxious. Make them grey.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+set background=light
