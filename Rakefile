@@ -7,7 +7,6 @@ desc 'Install plugins and vim config files'
 
 bundles = {
   'https://github.com/kien/ctrlp.vim.git' => 'ctrlp',
-  'https://github.com/kchmck/vim-coffee-script.git' => 'vim-coffee-script',
   'https://github.com/Lokaltog/vim-easymotion.git' => 'easymotion',
   'https://github.com/sjl/gundo.vim.git' => 'gundo',
   'https://github.com/rgarver/Kwbd.vim.git' => 'kwbd',
@@ -21,9 +20,8 @@ bundles = {
   'https://github.com/tomtom/tlib_vim' => 'tlib',
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
   'git://github.com/tanarurkerem/drupal-snippets.git' => 'drupal-snippets',
-  'git://github.com/tpope/vim-fugitive.git' => 'vim-fugitive',
   'https://github.com/rking/ag.vim.git' => 'ag',
-  'git@github.com:dag/vim-fish.git' => 'vim-fish'
+  'https://github.com/posva/vim-vue.git' => 'vim-vue',
 }
 
 task :default do

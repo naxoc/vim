@@ -1,7 +1,3 @@
-if &shell =~# 'fish$'
-  set shell=sh
-endif
-
 set nocompatible
 
 call pathogen#infect()
@@ -43,7 +39,6 @@ nnoremap / /\v
 vnoremap / /\v
 
 " I hit wq all the time when I just want to save. Disable that.
-cmap wq w
 " I never type jj, so make that esc now that we are stealing keys anyway.
 imap jj <Esc>
 
@@ -141,4 +136,5 @@ let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 " Using the default color theme in the terminal, I find the yellow line
 " numbers obnoxious. Make them grey.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+highlight Visual cterm=none ctermfg=DarkGrey ctermbg=LightYellow
 set background=light
