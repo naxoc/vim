@@ -19,6 +19,7 @@ bundles = {
   'https://github.com/MarcWeber/vim-addon-mw-utils.git' => 'vim-addon-mv-utils',
   'https://github.com/rking/ag.vim.git' => 'ag',
   'https://github.com/posva/vim-vue.git' => 'vim-vue',
+  'https://github.com/tpope/vim-fugitive' => 'vim-fugitive',
   'https://github.com/vim-airline/vim-airline' => 'vim-airline'
 }
 

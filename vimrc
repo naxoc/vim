@@ -92,8 +92,8 @@ let NERDTreeShowHidden=1
 " map <F8> :!/usr/local/bin/ctags -R --tag-relative=yes --langmap=php:.profile.engine.inc.module.theme.php --php-kinds=+icdf --languages=php --recurse<CR>
 
 " Check php files for errors
-set makeprg=php\ -l\ %
-set errorformat=%m\ in\ %f\ on\ line\ %l
+"set makeprg=php\ -l\ %
+"set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " Bubble single lines. Killer feature called 'Line up/down' in Textmate.
 nmap <C-Up> ddkP
@@ -116,8 +116,8 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 " Get json syntax highlighting for free like this.
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+"let g:syntastic_error_symbol='✗'
+"let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 
 " Using the default color theme in the terminal, I find the yellow line
@@ -125,3 +125,5 @@ let g:syntastic_auto_jump=0 " Dont jump to the first line with a problem
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE
 highlight Visual cterm=none ctermfg=DarkGrey ctermbg=LightYellow
 set background=light
+
+let g:airline_powerline_fonts = 1
