@@ -1,7 +1,6 @@
 set nocompatible
 
 call pathogen#infect()
-call pathogen#infect('custom_bundles')
 
 syntax on
 filetype plugin indent on
@@ -51,18 +50,6 @@ nmap <C-h> <C-W>h
 set scrolloff=5
 
 set laststatus=2
-" Stolen from:
-" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
-set statusline=%t\       "tail of the filename
-set statusline+=%m\      "modified flag
-set statusline+=%y\      "filetype
-set statusline+=b%-3.3n\  "buffer number
-set statusline+=%r      "read only flag
-set statusline+=%=      "left/right separator
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
-set statusline+=\ \ %c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 
 :set pastetoggle=<F3>
 
