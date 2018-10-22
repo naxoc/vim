@@ -20,6 +20,7 @@ bundles = {
   'https://github.com/rking/ag.vim.git' => 'ag',
   'https://github.com/posva/vim-vue.git' => 'vim-vue',
   'https://github.com/tpope/vim-fugitive' => 'vim-fugitive',
+  'https://github.com/airblade/vim-gitgutter' => 'vim-gitgutter',
   'https://github.com/vim-airline/vim-airline' => 'vim-airline'
 }
 
