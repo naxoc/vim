@@ -1,27 +1,8 @@
 set nocompatible
 
 " minpac
-packadd minpac
-call minpac#init()
-" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-" Add other plugins here.
-call minpac#add('ctrlpvim/ctrlp.vim.git')
-call minpac#add('tpope/vim-surround')
-
-" ctrlp
-" Map the buffer switcher from the Ctrlp plugin.
-map <leader>b :CtrlPBuffer<cr>
-" Map the recent files.
-map <leader>r :CtrlPMRUFiles<cr>
-" Map find-tag-in-buffer.
-map <leader>t :CtrlPBufTag<cr>
-" Map find-tag-in-all-buffers.
-map <leader>ta :CtrlPBufTagAll<cr>
-" Enable these extensions. Cycle through them with ctrl-f and ctrl-b when the
-" CtrlP window is open.
-let g:ctrlp_extensions = ['tag', 'buffertag']
+" Plugins are not loaded until you call either :PackUpdate or :PackClean
+source ~/.vim/packages.vim
 
 " Common config stuff
 syntax on
