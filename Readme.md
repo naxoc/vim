@@ -1,39 +1,32 @@
 # About
-This is my vim configuration. I like Vim to be blazing fast, so I have a lot of focus on keeping my configuration small and without too many heavy plugins.
+This is my vim config. It's been around for a really long time and I make it more and more simple every time I go over it. This incarnation uses [minpac](https://github.com/k-takata/minpac) for plugins and doesn't use very many plugins at all.
 
-This readme file and the Rakefile is very much inspired by Hasse Ramlevs vim project: https://github.com/ramlev/vim - Thanks Hasse!
+# What does it do?
+Not much. Just enough that I don't think Vim is too bare.
 
 # Installation
-The install process is quite simple.
+The install process is simple:
 
 Go to your home dir.
-
-    $ cd ~/
+```
+ cd ~/
+``` 
 
 Clone the repository into the ~/.vim folder
-
-    $ git clone https://naxoc@github.com/naxoc/vim.git
-
-Go into that folder
-
-    $ cd .vim
+```
+git clone https://naxoc@github.com/naxoc/vim.git .vim
+```
 
 Symlink the vimrc and gvimrc to your ~/ as dot files
+```
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+```
 
-    $ rake vim:setup
+[Install minpack](https://github.com/k-takata/minpac) if you don't already have it:
+```
+git clone https://github.com/k-takata/minpac.git \
+    ~/.vim/pack/minpac/opt/minpac
+```    
 
-Fetch all vim plugins in the bundles subfolder in ~/.vim
-
-    $ rake bundles:install
-
-# Usage
-If you want to automatic update all of the install plugins.
-
-Go to the ~/.vim folder
-
-    $ cd ~/.vim
-
-Execute the update command, and after a little while every thing is updated, by pushing all plugins from their repositories.
-
-    $ rake bundles:update
-
+Done! 🚀
