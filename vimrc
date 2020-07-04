@@ -20,6 +20,11 @@ map <leader>. :bn<cr>
 " Go to previous buffer
 map <leader>m :bp<cr>
 
+" Show in tree.
+map <leader>N :NERDTreeFind<cr>
+" Toggle tree
+map <leader>n :NERDTreeToggle<cr>
+
 " Get swap and backup files out of the way.
 set backupdir=~/.vim/_backup " where to put backup files.
 set directory=~/.vim/_temp " where to put swap files.

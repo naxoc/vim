@@ -10,6 +10,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('preservim/nerdcommenter')
+call minpac#add('preservim/nerdtree')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
