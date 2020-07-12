@@ -14,6 +14,8 @@ source ~/.vim/packages.vim
 
 " Change mapleader to ,
 let mapleader= ","
+" I never type jj, so make that esc.
+imap jj <Esc>
 
 " Go to next buffer
 map <leader>. :bn<cr>
