@@ -29,4 +29,9 @@ git clone https://github.com/k-takata/minpac.git \
     ~/.vim/pack/minpac/opt/minpac
 ```    
 
+To install or update plugins, run this inside Vim:
+```
+:PackUpdate
+```
+
 Done! 🚀
